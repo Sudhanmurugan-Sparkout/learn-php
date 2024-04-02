@@ -23,4 +23,57 @@ $capitals=array("india"=>"New delhi","usa"=>"WASHINGTON","japan"=>"tokyo","china
 $capital=$capitals[strtolower($_POST["country"])];
 echo $capital;
 }
+
+// array sorting
+
+$subjects=array("tamil","english","maths","science","social");
+
+sort($subjects);  // ascending
+
+foreach($subjects as $sub){
+    echo $sub . "<br>";
+}
+
+rsort($subjects); //descending
+
+
+foreach($subjects as $sub){
+    echo $sub . "<br>";
+}
+
+
+$books=array("the goat life" => "benyamin","asura" => "anand","parthipan kanuvugal"=>"kalki");
+asort($books);  //values ascending
+
+foreach($books as $book=>$author){
+        echo $author. "<br>";
+}
+
+arsort($books);  //values descending
+
+foreach($books as $book=>$author){
+        echo $author . "<br>";
+}
+
+ksort($books);  //keys ascending
+
+foreach($books as $book=>$author){
+    echo $book . "<br>";
+}
+
+krsort($books);  //keys descending
+
+foreach($books as $book=>$author)
+{   
+     echo $book . "<br>";
+}
+
+$books+=["kadal pura" =>"sandliyan"]; // to add value for associative array
+ echo var_dump($books) . "<br>";
+
+
+ array_push($subjects,"botany","biology");  // to add value for indexed array
+ echo var_dump($subjects);
+
+ 
 ?>
