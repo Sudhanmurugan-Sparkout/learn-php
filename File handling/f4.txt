@@ -1,0 +1,4 @@
+the 'x' mode is used to create a new file
+it already file not open it make warning
+ it can only one time to write ,you wish to add more lines
+ you delete first existing file

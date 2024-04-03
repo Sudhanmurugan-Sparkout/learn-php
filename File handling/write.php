@@ -1,10 +1,10 @@
 <?php 
 $write=fopen("f3.txt","w");
  
-$add="Hi this is Sudhan/n";
+$add="Hi this is Sudhan\n";
 fwrite($write,$add);
-$add1="i am from pudukottai";
-fwrite($write,$add1);
+$add="i am from pudukottai\n";
+fwrite($write,$add);
  fclose($write);
 
 $txt=fopen("f2.txt","w");
@@ -13,6 +13,5 @@ fwrite($txt,$t1);
 $t1=" it overwritting the file";
 fwrite($txt,$t1);
 
-
-// $a=fopen
+ echo $write;
 ?>
