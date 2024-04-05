@@ -17,7 +17,7 @@ if(isset($_POST["submit"])){
     if(in_array($filestrLow,$check)){
            if($fileErr===0){
                    if($fileSize<100000){
-                         $filenewname=uniqid() . "." . $filestrLow;
+                         $filenewname=uniqid("",true) . "." . $filestrLow;
                          $fileupload='uploads/' . $filenewname;
                          move_uploaded_file($fileTmpname,$fileupload);
                    }else{
