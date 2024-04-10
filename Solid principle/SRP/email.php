@@ -6,13 +6,15 @@ class email{
 
      static $check=array("sudhanmurugan27@gmail.com","abc123@gmail.com","qwe321@gmail","asd234@gmail");
 
-     public static function emailValidate(UserDetails $email){
-     if(in_array($email->email,self::$check)){
+     public static function emailValidate($email){
+     if(in_array($email,self::$check)){
 
-        echo "thank you for visiting our side ";
-     }else{
-        echo  "Your emails not validate please check your email";
+      return true;
      }
+     else{
+
+      return false;
+   }
 }
 }
 ?>

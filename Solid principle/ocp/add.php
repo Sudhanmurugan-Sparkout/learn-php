@@ -4,6 +4,13 @@ include_once 'paymentclass.php';
 
 class phonepay implements payment{
 
+    private $object;
+
+    public function __construct($object){
+
+        $this->object=$object;
+    }
+
 function paymentprocess($paymentType)
 {
     
@@ -12,7 +19,7 @@ function paymentprocess($paymentType)
         return "you use phone pay for payment";
 }else{
     
-    return "we cannot accept this $paymentType payment type";
+    return  $this->object->paymentprocess($paymentType);
 
 }
 

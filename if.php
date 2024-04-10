@@ -18,7 +18,7 @@ if(isset($age)) {
     <title>Document</title>
 </head>
 <body>
-    <form action="index.php" method="post">
+    <form action="if.php" method="post">
         <label for="name">User name</label>
         <input type="text" name="name" id="name">
         <br>

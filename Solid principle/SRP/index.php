@@ -4,7 +4,13 @@
 
  $obj= new UserDetails("sudhan","sudhanmurugan27@gmail.com",122355);
  
-email::emailValidate($obj);
+if (email::emailValidate($obj->email)){
+
+    echo " Thankyou for log in!..";
+}else{
+
+    echo " please check your email";
+}
 
 
 

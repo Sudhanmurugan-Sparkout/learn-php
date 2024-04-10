@@ -1,5 +1,5 @@
 <?php 
-//include_once 'add.php';
+
 interface payment{
 
     function paymentprocess($paymentType);
