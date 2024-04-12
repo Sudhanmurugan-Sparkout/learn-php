@@ -1,0 +1,48 @@
+
+[
+    {
+        "name" : "sudhan",
+        "age"  : 22,
+        "gender" : "male",
+
+        "proofs" :{
+            "license" : "yes",
+            "voter_id" : "yes"
+        }
+    },
+    
+    {
+        "name" : "madhan",
+        "age"  : 18,
+        "gender" : "male",
+
+        "proofs" :{
+            "license" : "yes",
+            "voter_id" : "no"
+        }
+    },
+        
+    {
+        "name" : "mahila",
+        "age"  : 20,
+        "gender" : "female",
+
+        "proofs" :{
+            "license" : "yes",
+            "voter_id" : "yes"
+        }
+    },
+    
+    {
+        "name" : "akila",
+        "age"  : 12,
+        "gender" : "male",
+
+        "proofs" :{
+            "license" : "no",
+            "voter_id" : "no"
+        }
+    }
+    
+
+]
