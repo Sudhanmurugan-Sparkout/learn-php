@@ -34,8 +34,7 @@ echo "<br>";
 
 //count visit
 
-$countvisit = 22;
-
+$countvisit = 0;
 if(isset($_COOKIE['count_add']))
 {
     $countvisit = $_COOKIE['count_add'];
@@ -45,4 +44,5 @@ if(isset($_COOKIE['count_add']))
 setcookie('count_add',$countvisit);       
 echo "You have visited ".$countvisit." times";
 echo "$countvisit";
+
 ?>

@@ -8,6 +8,6 @@
  echo $_SESSION["name"];
  print_r($_SESSION);
 
- unset($_SESSION["colour"]); //we cna delete the key 
+ unset($_SESSION["colour"]); //we can  delete the key 
  
  ?>

@@ -20,29 +20,9 @@
 
 <?php 
 
- 
-// if(isset($_POST["submit"])) {
-//     if(!empty($_POST["input"])) {
-//         $array = array(); 
-//         foreach($_POST["input"] as $input) {
-            
-//             $array[] = $input;
-//         }
-//         print_r($array); 
-//     } else {
-//         echo "Please enter at least one output";
-//     }
-// }
-
-
-
-
 session_start(); 
 
 
-if (!isset($_SESSION['inputs'])) {
-    $_SESSION['inputs'] = array();
-}
 
 if (isset($_POST["submit"])) {
     if (!empty($_POST["input"])) {

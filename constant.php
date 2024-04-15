@@ -18,9 +18,12 @@ function check_define(){
 check_define();
 echo "<br>";
 
-
-
-
+const age=22;
+echo age;
+ function demo_const(){    // cannot declare const variable directly inside the function
+    return age;
+ }
+echo demo_const();
 
 
 

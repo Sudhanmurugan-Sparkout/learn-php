@@ -1,79 +1,48 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form action="array.php" method="post">
-        <div>
-            <label for="country">Country</label>
-            <input type="text" name="country" id="country">
-        </div>
-        <input type="submit" value="capital" name="submit">
-    </form>
-</body>
-</html>
 <?php 
-if(isset($_POST["submit"])){
-$capitals=array("india"=>"New delhi","usa"=>"WASHINGTON","japan"=>"tokyo","china"=>"Beijing");
 
-$capital=$capitals[strtolower($_POST["country"])];
-echo $capital;
+//multi dimensonal array
+
+$fruits=array(
+    array("name"=>"orange","price"=>20),
+    array("name"=>"apple","price"=>30),
+    array("name"=>"banana","price"=>10)
+
+);
+
+$fruits[]=["name"=>"watermelon","price"=>15];
+
+
+$fruits[1]+=["colour"=>"red","size"=>"medium"];
+
+$fruits[1]["name"]="ootyapple";
+print_r($fruits[1]);
+
+
+//indexed array
+
+$cars=["volvo","BMW","Audi"];
+
+array_push($cars,"toyota","Benz");
+print_r($cars[4]);
+echo"<br>";
+
+$cars[4]="nissan";
+print_r($cars[4]);
+echo"<br>";
+
+
+// array_map
+
+$numbers=[1,2,3,4,5];
+
+function multiple($n){
+
+    return $n*$n;
+
 }
 
-// array sorting
-
-$subjects=array("tamil","english","maths","science","social");
-
-sort($subjects);  // ascending
-
-foreach($subjects as $sub){
-    echo $sub . "<br>";
-}
-
-rsort($subjects); //descending
-
-
-foreach($subjects as $sub){
-    echo $sub . "<br>";
-}
-
-
-$books=array("the goat life" => "benyamin","asura" => "anand","parthipan kanuvugal"=>"kalki");
-asort($books);  //values ascending
-
-foreach($books as $book=>$author){
-        echo $author. "<br>";
-}
-
-arsort($books);  //values descending
-
-foreach($books as $book=>$author){
-        echo $author . "<br>";
-}
-
-ksort($books);  //keys ascending
-
-foreach($books as $book=>$author){
-    echo $book . "<br>";
-}
-
-krsort($books);  //keys descending
-
-foreach($books as $book=>$author)
-{   
-     echo $book . "<br>";
-}
-
-$books+=["kadal pura" =>"sandliyan"]; // to add value for associative array
- echo var_dump($books) . "<br>";
-
-
- array_push($subjects,"botany","biology");  // to add value for indexed array
- echo var_dump($subjects);
-
- 
+$num= array_map("multiple",$numbers);
+print_r($numbers);
+echo"<br>";
+print_r($num);
 ?>

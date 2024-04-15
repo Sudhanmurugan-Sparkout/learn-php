@@ -1,14 +1,4 @@
-<?php 
-$age=$_POST["Age"];
-if(isset($age)) {
-    if($age>=18) {
-        echo "you can vote";
-    } else {
-        echo "you cannot vote";
-    }
-}
 
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,3 +24,15 @@ if(isset($age)) {
     </form>
 </body>
 </html>
+
+<?php 
+$age=$_POST["Age"];
+if(!empty($age)) {
+    if($age>=18) {
+        echo "you can vote";
+    } else {
+        echo "you cannot vote";
+    }
+}
+
+?>

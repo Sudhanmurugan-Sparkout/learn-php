@@ -8,9 +8,9 @@ echo $_SESSION["name"];
 $phone="apple";
 echo $phone ."<br>";
 
-$_SESSION["mobile"]=["oneplus","apple","vivo"]; // WE CAN ADD MORE DATA WITH SINGLE SESSION 
+$_SESSION["mobile"]=["oneplus","vivo",$phone]; // WE CAN ADD MORE DATA WITH SINGLE SESSION 
 
-print_r($_SESSION);
+print_r($_SESSION["mobile"]);
 
 
 ?>

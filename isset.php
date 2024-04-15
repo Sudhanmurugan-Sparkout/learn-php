@@ -10,7 +10,7 @@
         <div>
             <label for="name">User name</label>
             <input type="text" name="name" id="name">
-            <span name="error">*<?php  echo $nameErr?></span>
+            
         </div>
         <div>
             <label for="password">Password</label>
@@ -33,9 +33,10 @@
         echo "please enter the pasword";
     } else{
         echo "Hello $username" . "<br>";
-    }
+    
+    foreach($_POST as $key=>$value){
+        echo " {$key} = {$value} <br>";
+        }
  }
-// foreach($_POST as $key=>$value){
-// echo " {$key} = {$value} <br>";
-// }
+ }
 ?>

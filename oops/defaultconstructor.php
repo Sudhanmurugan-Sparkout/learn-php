@@ -6,9 +6,9 @@
 class name{
     public $name;
 
-    function __construct(){
+    function __construct($name="sudhan"){
       
-        $this->name="sudhan";
+        $this->name=$name;
     }
     
     function get_name(){

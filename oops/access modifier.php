@@ -11,18 +11,31 @@ public function set_name($name){
     
 }
 
-function get_name(){
+public function get_name(){
     return $this->name;
 }
 
+protected function info(){
+
+    return " protected class are accesss only within a class and derived class";
 }
 
+}
 
-$name= new access_modify();
+class access extends access_modify{
+
+   public function get_info(){
+
+      return  parent:: info();
+   }
+
+}
+
+$name= new access();
 $name->set_name("sudhan\n");
 echo $name->get_name();
 $name->set_name("madhan\n");
 echo $name->get_name();
-
+echo $name->get_info();
 
 ?>

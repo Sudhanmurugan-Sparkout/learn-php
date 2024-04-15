@@ -20,7 +20,8 @@
 </html>
 
 <?php 
- if(isset($_POST["submit"])){
+
+ if(isset($_POST["submit"])){         // user input is are there in array or not
 
 $array= array(1,2,3,4,5,6,7,8,9,0);
 $check = in_array($_POST["input"],$array);

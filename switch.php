@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="radius.php" method="post">
+    <form action="switch.php" method="post">
     <input type="radio" name="food" value="pizza">pizza <br>
     <input type="radio" name="food" value="burger"> burger <br> 
     <input type="radio"  name="food" value="sandwich">sandwich <br>
