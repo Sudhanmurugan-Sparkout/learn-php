@@ -24,7 +24,7 @@ session_start();
 
 
 
-if (isset($_POST["submit"])) {
+if (isset($_POST["submit"])) {            // user give the all input to store in array
     if (!empty($_POST["input"])) {
         
         $_SESSION['inputs'][] = $_POST["input"];
