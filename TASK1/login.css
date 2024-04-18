@@ -1,0 +1,27 @@
+
+body{
+    background-image: url("image1.jpg");
+ 
+}
+.main{
+    width: 500px;
+    background-color:rgba(0,0,0,0.3);
+    margin: 300px auto;
+    padding: 50px;
+    border-radius: 15px;
+    text-align: center;
+}
+.input label{
+    display: block;
+}
+h2{
+    text-align: center;
+    text-transform: capitalize;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: larger;
+
+}
+.btn{
+    margin: 20px;
+    text-align: center;
+}

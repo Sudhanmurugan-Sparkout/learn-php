@@ -15,6 +15,7 @@ if ($database) {
     echo "Database created successfully<br>";
 } else {
     echo "cannot create database : " . mysqli_error($conn) . "<br>";
+    exit;
 }
 
 mysqli_select_db($conn, 'logindb');

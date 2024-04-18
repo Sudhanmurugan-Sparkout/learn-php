@@ -1,0 +1,54 @@
+form{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     margin-top: 100px;
+     background-color: antiquewhite;
+     flex-direction: column;
+     width: 600px;
+     margin-left: 400px;
+}
+body{
+    background-color: aliceblue;
+}
+.all_input {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+}
+
+
+.grp {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+
+.grp div {
+    margin-right: 20px; /
+}
+
+.grp label {
+    display: block;
+}
+
+.grp input {
+    width: 100px;
+}
+
+
+.button {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+    margin-top: 5px; 
+}
+
+.button button {
+    margin-left: 0;
+    margin-bottom: 5px; 
+}
+
+
+

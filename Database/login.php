@@ -20,6 +20,7 @@ if($create_table){
 }else{
     echo "table is not created" . mysqli_error($conn);
 }
+if(!empty($_POST["name"]) && !empty($_POST["last"]) && !empty($_POST["email"]) && !empty($_POST["password"])) {
 $name=$_POST["name"];
 $last=$_POST["last"];
 $email=$_POST["email"];
@@ -27,7 +28,21 @@ $password=$_POST["password"];
 
 $insert="INSERT INTO login_information(first_name,last_name,email,password) values('$name','$last','$email','$password')";
 mysqli_query($conn,$insert);
+}else{
+    echo " Give the proper input";
+}
 
+$read= "select *from login_information";
+$read_table=mysqli_query($conn,$read);
+
+if(mysqli_num_rows($read_table)>0){
+     
+    while($result=mysqli_fetch_assoc($read_table)){
+        echo "name : " . $result["first_name"];
+    }
+    }else{
+        echo " no result set in this table";
+    }
 
 
 ?>
