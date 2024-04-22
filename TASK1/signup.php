@@ -16,7 +16,7 @@ mysqli_select_db($conn,'user_Details');
 $create="CREATE TABLE IF NOT EXISTS signup_information(id int auto_increment primary key,
                                          user_name varchar(30),
                                          email varchar(40),
-                                         password varchar(10),
+                                         password varchar(20),
                                          gender varchar(10))";
 
 $create_table=mysqli_query($conn,$create);                                         
@@ -30,10 +30,12 @@ $name=$_POST["name"];
 $email=$_POST["mail"];
 $password=$_POST["password"];
 $gender = $_POST["gender"];
-$insert="INSERT INTO signup_information(first_name,email,password,gender) values('$name','$email','$password','$gender')";
+$insert="INSERT INTO signup_information(user_name,email,password,gender) values('$name','$email','$password','$gender')";
 mysqli_query($conn,$insert);
 
+
 }
+
 
 
 
