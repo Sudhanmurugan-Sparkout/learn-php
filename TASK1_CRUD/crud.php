@@ -46,6 +46,7 @@
                 
             </tbody>
         </table>
+        <a href="index.php" class="btn btn-danger"><b>Log out </b></a>
         <div id="message">
                 <h3><?php  
                 if(isset($_GET["message"])){

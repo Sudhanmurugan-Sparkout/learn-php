@@ -26,6 +26,7 @@ if(isset($_POST["submit"])){
                         $filenewname = uniqid("", true) . "." . $filestrLow;
                         $fileupload = 'Fileuploads/' . $filenewname;
                         $zip->addFile($fileTmpname, $fileupload); 
+                        echo "Your files have been submitted successfully...!"; 
                     } else {
                         echo "File is too big ";
                     }
@@ -37,7 +38,7 @@ if(isset($_POST["submit"])){
             }
         }
 
-        echo "Your files have been submitted successfully...!"; 
+        
     } else {
         echo "Failed to create or open the zip file";
     }

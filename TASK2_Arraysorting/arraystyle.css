@@ -3,14 +3,12 @@ form{
      justify-content: center;
      align-items: center;
      margin-top: 100px;
-     background-color: antiquewhite;
-     flex-direction: column;
-     width: 600px;
+     flex-direction:column;
+     width: fit-content;
      margin-left: 400px;
+     height: fit-content;
 }
-body{
-    background-color: aliceblue;
-}
+ 
 .all_input {
     display: flex;
     flex-direction: column; 
@@ -37,7 +35,20 @@ body{
     width: 100px;
 }
 
-
+.first{
+    margin: 20px;
+}
+.second{
+    margin: 20px;
+}
+.third{
+    margin: 20px;
+}
+#heading{
+    text-align: center;
+    margin: 20px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
 
 

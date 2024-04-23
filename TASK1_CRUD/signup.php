@@ -31,9 +31,10 @@ $email=$_POST["mail"];
 $password=$_POST["password"];
 $gender = $_POST["gender"];
 $insert="INSERT INTO signup_information(user_name,email,password,gender) values('$name','$email','$password','$gender')";
-mysqli_query($conn,$insert);
-
-
+$insert_result=mysqli_query($conn,$insert);
+if($insert_result){
+    header("location:index.php?");
+}
 }
 
 
