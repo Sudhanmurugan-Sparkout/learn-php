@@ -61,6 +61,16 @@
                       }
                    ?></h3>
             </div>
+            <div id="delete">
+                <h3><?php if(isset($_GET["delete_msg"])){
+                    echo $_GET ["delete_msg"];
+                    }?></h3>
+            </div>
+            <div id="update">
+                <h3><?php if(isset($_GET["update_msg"])){
+                    echo $_GET["update_msg"];
+                    }?></h3>
+            </div>
 
 
 <form method="post" action="add.php">
