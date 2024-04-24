@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <style>
+        #stop{
+            margin-left:  680px;
+            margin-top: 300px;
+            background-color: rgb(197, 77, 77);
+        }
+        .box{
+            margin: auto;
+            margin-top: 10px;
+            background-color:beige;
+            width: 150px;
+            height: 50px;
+            
+        }
+        .content-after{
+            display: none;
+        }
+        
+    </style>
+</head>
+<body>
+    <button id="stop">Stop animation</button>
+    <div class="box">
+        <p class="content-before">click me to see more !</p>
+        <p class="content-after">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere magni dolores consectetur provident at cumque, illo, 
+            doloribus quae corrupti id repudiandae soluta voluptatum culpa minus, quisquam praesentium quas minima vero impedit autem?
+            ducimus corrupti doloribus nulla reprehenderit nesciunt quis optio inventore corporis rem perferendis velit natus!</p>
+    </div>
+    
+    <script>
+        $(document).ready(function(){
+            $(".box").click(function(){
+                $(".box").animate({
+                    width:"700px",
+                    height:"200px"
+                },4000);
+                $(".content-after").show()
+            })
+            $("#stop").click(function(){
+                $(".box").stop();
+            })
+        })
+    </script>
+</body>
+</html>

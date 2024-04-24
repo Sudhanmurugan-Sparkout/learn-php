@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<style>
+    nav{
+        display: none;
+    }
+</style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li>aWelcome</li>
+            <li>this is my suprise</li>
+            <li>Happy coding!</li>
+        </ul>
+    </nav>
+
+    <p id="hover"><b>hover me </b> i will be hide</p>
+    <p id="click"><b>click me </b> i will be hide</p>
+    <p id="dbclick"><b>double click me </b> i will be hide</p>
+    <p id="outside"><b>Leave me alone </b> i will be hide</p>
+    <p><b>press [enter] </b> i give suprise for you</p>
+
+    
+    <script>
+        $(document).ready(function(){
+             $("#hover").hover(function(){
+                $(this).hide();
+             });
+             $("#click").click(function(){
+                $(this).hide();
+             });
+             $("#dbclick").dblclick(function(){
+                $(this).hide();
+             });
+             $("#outside").mouseout(function(){
+                $(this).hide();
+             })
+            });
+             let trigger=false;
+             $(document).keypress(function(a){
+                if(a.which===13){
+                    if(trigger===false){
+                        $("nav").fadeIn();
+                        trigger=true;
+                    }else if(trigger===true){
+                        $("nav").fadeOut();
+                        trigger=false;
+                    }
+                }
+             });
+            
+
+      
+    </script>
+
+</body>
+</html>

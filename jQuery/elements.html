@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="Title">
+        <h3>Title</h3>
+    </div>
+    <div class="content">
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum qui consequuntur ducimus doloribus expedita voluptatibus,
+       odit sed ea illo eveniet animi ullam minus possimus explicabo exercitationem, aperiam quia veniam. Aspernatur!</p>
+    </div>
+    <script>
+        $(document).ready(function(){
+           $(".Title").click(function(){
+            $(".content").slideToggle(3000,function(){
+                alert("your content will be appeara and disappear");
+            });
+           })
+
+        })
+    </script>
+</body>
+</html>

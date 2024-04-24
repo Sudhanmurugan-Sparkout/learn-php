@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <style>
+        .box{
+            margin: auto;
+            margin-top: 200px;
+            background-color:beige;
+            width: 150px;
+            height: 50px;
+            
+        }
+        .content-after{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p class="content-before">click me to see more !</p>
+        <p class="content-after">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere magni dolores consectetur provident at cumque, illo, 
+            doloribus quae corrupti id repudiandae soluta voluptatum culpa minus, quisquam praesentium quas minima vero impedit autem?
+            ducimus corrupti doloribus nulla reprehenderit nesciunt quis optio inventore corporis rem perferendis velit natus!</p>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $(".box").click(function(){
+                $(".box").animate({
+                    width:"500px",
+                    height:"200px"
+                },1000);
+                $(".content-after").show();
+            })
+        })
+    </script>
+</body>
+</html>
