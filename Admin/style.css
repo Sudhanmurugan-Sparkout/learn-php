@@ -19,3 +19,9 @@
 .select2{
     margin-left: 30px;
 }
+#search{
+    display: flex;
+    width: fit-content;
+    margin-top: 200px;
+   
+}
