@@ -44,19 +44,19 @@
 </html>
 
 <?php 
+ include_once 'database.php';
  
- 
 
-$serverName="localhost";
-$username="root";
-$password= "";
+// $serverName="localhost";
+// $username="root";
+// $password= "";
 
-$conn=mysqli_connect($serverName,$username,$password);
+// $conn=mysqli_connect($serverName,$username,$password);
 
-$sql="CREATE DATABASE IF NOT EXISTS user_Details";
-$database=mysqli_query($conn,$sql);
+// $sql="CREATE DATABASE IF NOT EXISTS user_Details";
+// $database=mysqli_query($conn,$sql);
 
-mysqli_select_db($conn,'user_Details');
+// mysqli_select_db($conn,'user_Details');
 
 $create="CREATE TABLE IF NOT EXISTS signup_information(id int auto_increment primary key,
                                          user_name varchar(30),

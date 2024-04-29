@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let show = new Promise((resolve, reject) => {
+        let tickets = true;
+        if (tickets) {
+         setTimeout(resolve,3000,"ticket is available");
+        } else {
+          reject("ticket is not available");
+        }
+      });
+
+      async function result() {
+        try {
+          console.log("hi");
+          res = await show;
+          console.log(res);
+          console.log("bye");
+        } catch (msg) {
+          console.log(msg);
+        }
+      }
+      result()
+    </script>
+  </body>
+</html>

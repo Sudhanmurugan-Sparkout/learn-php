@@ -1,0 +1,21 @@
+.container{
+    display: flex;
+    width: fit-content;
+    flex-direction: row;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#all_product{
+    display: flex;
+   margin-left: 30px;
+   margin-right: 50px;
+   
+}
+.select2,.select1{
+    display: flex;
+    width: 400px;
+}
+.select2{
+    margin-left: 30px;
+}

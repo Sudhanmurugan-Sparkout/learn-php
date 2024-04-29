@@ -42,6 +42,6 @@ if ($insertValue==true){
     echo "the value is not inserted : " . mysqli_error($conn);
 }
 
-$insert1="INSERT INTO IF NOT EXIST  user_details (user_name,password) values ('madhan','asd123')";
+$insert1="INSERT INTO IF NOT EXISTS  user_details (user_name,password) values ('madhan','asd123')";
 $insertValue1=mysqli_query($conn,$insert1);
 ?>

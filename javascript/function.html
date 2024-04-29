@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <select id="opt">
+        <option value="select">Select</option>
+      </select>
+    <script>
+      //function expression
+      let arr = [1, 2, 3, 4, 5];
+      let result = function (arr) {
+        let sum = 0;
+        for (let val of arr) {
+          sum += val;
+        }
+        return sum;
+      };
+      console.log(result(arr));
+
+      //arrow function
+      let subract = (arr) => {
+        let sub = 0;
+        for (let val of arr) {
+          sub -= val;
+        }
+        return sub;
+      };
+      console.log(subract(arr));
+
+      //spread operator
+      let product = function (...arg) {
+        let value = 1;
+        for (let val of arg) {
+          value *= val;
+        }
+        return value;
+      };
+      console.log(product(1, 2, 3, 4, 5));
+
+      //Call back function
+      let array = ["sudhan", "madhan", "mahila", "akila"];
+      array.forEach(print);
+      function print(value) {
+        console.log(value);
+      }
+      let select=["PHP",'LARAVEL',"HTML","CSS"];
+      select.forEach(value=>{
+        const option =document.createElement('option')
+        option.textContent=value;
+    option.value=value;
+        document.getElementById("opt") . appendChild(option)  })
+    </script>
+  
+  </body>
+</html>

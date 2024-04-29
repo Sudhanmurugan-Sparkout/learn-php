@@ -23,7 +23,6 @@
              margin-left: 730px;
              margin-top: 20px;
              
-             ;
         }
     </style>
 </head>

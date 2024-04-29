@@ -1,0 +1,32 @@
+#heading1{
+    text-align: center;
+    background-color: antiquewhite;
+    color:black;
+    padding: 20px;
+    letter-spacing: 2px;
+}
+.box1 h2{
+    float: left;
+}
+#button{
+  float: right;
+}
+.container{
+    margin-top: 50px;
+}
+#message{
+    text-align: center;
+    color: red;
+}
+#insert {
+    text-align: center;
+    color:green;
+}
+#delete{
+    text-align: center;
+    color: red;
+}
+#update {
+    text-align: center;
+    color:green;
+}
