@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\fallbackController;
+use App\Http\Controllers\studentsController;
 use App\Http\Controllers\userController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -44,5 +45,9 @@ Route::prefix('/home')->group(function(){      //we cannot use group for single 
 Route::fallback(fallbackController::class);
 
 Route::get('/userdetails',[userController::class,'get_details']);
-     
 
+//crud opreration routes below
+
+Route::get('student',[studentsController::class,'index']);
+Route::get('student/create',[studentsController::class,'create']);
+Route::post('student/create',[studentsController::class,'store']);
