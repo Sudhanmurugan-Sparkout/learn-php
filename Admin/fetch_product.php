@@ -2,7 +2,7 @@
 include_once 'database.php';
 if (isset($_GET["id"])) {
   $id = $_GET["id"];
-  // setcookie("")
+
 
   $product = "Select*from product where category_id=$id";
   $product_result = mysqli_query($conn, $product);

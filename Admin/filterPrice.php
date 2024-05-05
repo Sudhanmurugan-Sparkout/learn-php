@@ -2,12 +2,12 @@
 <?php 
 
 include_once 'database.php';
-if(isset($_GET["name"])){
+if(isset($_GET["price"])){
 
 
-    $name=$_GET["name"];
-   // echo $name;
-    $filter="select * from product where product_name='$name'";
+    $price=$_GET["price"];
+   //echo $price;
+    $filter="select * from product where price between $price";
     
     $result=mysqli_query($conn,$filter);
     //print_r($result);
@@ -27,5 +27,3 @@ if(isset($_GET["name"])){
 }
 ?>
 
-</tbody>
-</table>

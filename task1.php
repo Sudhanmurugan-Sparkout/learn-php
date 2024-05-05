@@ -11,5 +11,6 @@ foreach($arr1 as $merge){
 }
 
 print_r($arr);
+phpinfo();
 
 ?>
