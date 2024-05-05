@@ -14,8 +14,8 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h2> Add Students </h2>
-                    <a href="{{ url('student') }}" class="btn btn-danger">close</a>
+                    <h2> Update student detials </h2>
+                    <a href="{{ route('student.index') }}" class="btn btn-danger">close</a>
                 </div>
                 <div>
                     @if($errors->all())
@@ -27,26 +27,27 @@
                     @endif
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('student.store') }}" method="post">
+                    <form action="{{ url("student/$student->id/update") }}" method="post" class="form-group">
                         @csrf
+                        @method('put')
                         
-                        <div>
+                        <div >
                             <label >Name</label>
-                            <input type="text" name="name">
+                            <input type="text" name="name" value="{{ $student->name }}">
                         </div>
                         <div>
                             <label >Gender</label>
-                            <input type="text" name="gender">
+                            <input type="text" name="gender" value="{{ $student->gender }}">
                         </div>
                         <div>
                             <label >DOB</label>
-                            <input type="date" name="DOB">
+                            <input type="date" name="DOB" value="{{ $student->DOB }}">
                         </div>
                         <div>
                             <label >class</label>
-                            <input type="text" name="class">
+                            <input type="text" name="class" value="{{ $student->class }}">
                         </div>
-                        <button class="btn btn-primary" type="submit">Add</button>
+                        <button class="btn btn-primary" type="submit">Update</button>
                     </form>
                 </div>
             </div>

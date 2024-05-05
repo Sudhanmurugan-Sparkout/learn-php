@@ -48,6 +48,9 @@ Route::get('/userdetails',[userController::class,'get_details']);
 
 //crud opreration routes below
 
-Route::get('student',[studentsController::class,'index']);
-Route::get('student/create',[studentsController::class,'create']);
-Route::post('student/create',[studentsController::class,'store']);
+Route::get('student',[studentsController::class,'index'])->name('student.index');
+Route::get('student/create',[studentsController::class,'create'])->name('student.create');
+Route::post('student/create',[studentsController::class,'store'])->name('student.store');
+Route::get('student/{id}/edit',[studentsController::class,'edit'])->name('student.edit');
+Route::put('student/{id}/update',[studentsController::class,'update'])->name('student.update');
+Route::get('student/{id}/delete',[studentsController::class,'destroy'])->name('student.delete');
