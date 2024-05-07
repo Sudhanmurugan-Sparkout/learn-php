@@ -38,14 +38,14 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        $course_data=  $request->validate([
+        $course_data=$request->validate([
             'name'=>'required|string|max:255',
             'duration'=>'required|integer|max:10',
-            'startingDate'=>'required|date',
-            'endingDate'=>'required|date'
+             'startingDate'=>'required|date',
+                'endingDate'=>'required|date'
       ]);
         course::create($course_data);
-        return redirect('course.index');
+        return redirect('course');
     }
 
     /**
@@ -56,7 +56,8 @@ class CourseController extends Controller
      */
     public function show(course $course)
     {
-        
+        $data=course::find($course->id);
+        return view('course.show',compact('data'));
     }
 
     /**
@@ -67,7 +68,10 @@ class CourseController extends Controller
      */
     public function edit(course $course)
     {
-        //
+        // dd($course->id);
+        $data=course::find($course->id);
+        return view('course.edit',compact('data'));
+       
     }
 
     /**
@@ -79,7 +83,16 @@ class CourseController extends Controller
      */
     public function update(Request $request, course $course)
     {
-        //
+        // dd($request);
+       $update_data=$request->validate([
+        'name'=>'required|string|max:255',
+            'duration'=>'required|integer|max:10',
+             'startingDate'=>'required|date',
+                'endingDate'=>'required|date'
+       ]);
+       course::find($course->id)->update($update_data);
+       return redirect('course');
+
     }
 
     /**
@@ -88,8 +101,12 @@ class CourseController extends Controller
      * @param  \App\Models\course  $course
      * @return \Illuminate\Http\Response
      */
-    public function destroy(course $course)
+    public function destroy( course $course, Request $request)
     {
-        //
-    }
+   
+    
+        course::find($course->id)->delete($request->all());
+        return redirect('course');
+
+}
 }

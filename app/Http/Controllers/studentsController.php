@@ -37,7 +37,7 @@ function update(int $id,Request $request){
         'class' => 'required|max:255|string' 
     ]);
     student::find($id)->update($data);
-    return redirect( route('student.index') )->with('success','the data uodated successfully');
+    return redirect( route('student.index') )->with('success','the data updated successfully');
 }
 function destroy(int $id){
     $student=student::find($id);

@@ -38,8 +38,16 @@
                                     <td>{{ $data->startingDate }}</td>
                                     <td>{{ $data->endingDate }}</td>
                                     <td>
-                                        <a href="{{ url("student/$data->id/edit") }}" class="btn btn-info">Edit</a>
-                                        <a href="{{ url("student/$data->id/delete") }}"class="btn btn-danger">Delete</a> 
+                                        <div style="display:flex;gap:1rem;">
+                                            <a href="{{ route("course.show",$data->id) }}" class="btn btn-info">Show</a> 
+                                        <a href="{{ route("course.edit",$data->id) }}" class="btn btn-success">Edit</a>
+                                        <form method="post" action="{{route ("course.destroy",['course'=>$data->id]) }}">
+                                            @csrf
+                                            @method('delete')
+                                       <button type="submit" class="btn btn-danger" onclick=" return confirm('Are you sure?')">Delete</button>
+                                
+                                     </form>
+                                    </div>
                                     </td>
                                 </tr>
                                 @endforeach

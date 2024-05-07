@@ -14,35 +14,29 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h3>Course Details</h3>
+                    <h3>Update Course Details</h3>
                     
                 </div>
-                <div>
-                    {{-- @if($errors->all())
-                    @foreach($errors->all() as $error)
-                    <ul>
-                        <li>{{ $error }}</li>
-                    </ul>
-                    @endforeach
-                    @endif --}}
+                
+                    {{-- {{ dd($data) }} --}}
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('course.store') }}" method="post" class="form-group">
+                    <form action="{{ route('course.update',['course'=>$data->id]) }}" method="post" class="form-group">
                         @csrf
-                       
+                       @method('put')
                         <div>
                             <label for="name">Name</label>
-                            <input type="text" name="name" id="name" value={{ old('name') }}>
+                            <input type="text" name="name" id="name" value="{{ $data->name }}">
                         </div>
                         @if($errors->has('name'))
                         <p><strong class="text-danger">
                             
                             {{ $errors->first('name') }}
                         </strong></p>
-                        @endif
+                        @endif  
                         <div>
                             <label for="duration">Duration</label>
-                            <input type="text" name="duration" id="duration" value={{ old('duration') }}>
+                            <input type="text" name="duration" id="duration" value="{{ $data->duration}}">
                         </div>
                         @if($errors->has('duration'))
                         <p><strong class="text-danger">
@@ -52,7 +46,7 @@
                         @endif
                         <div>
                             <label for="sdate">Starting Date</label>
-                            <input type="date" name="startingDate" id="sdate" value={{ old('startingDate') }}>
+                            <input type="date" name="startingDate" id="sdate" value="{{ $data->startingDate }}">
                         </div>
                         @if($errors->has('startingDate'))
                         <p><strong class="text-danger">
@@ -62,7 +56,7 @@
                         @endif
                         <div>
                             <label for="edate">Ending Date</label>
-                            <input type="date" name="endingDate" id="edate" value={{ old('endingDate') }}>
+                            <input type="date" name="endingDate" id="edate" value="{{ $data->endingDate }}">
                         </div>
                         @if($errors->has('endingDate'))
                         <p><strong class="text-danger">
@@ -70,7 +64,7 @@
                             {{ $errors->first('endingDate') }}
                         </strong></p>
                         @endif
-                        <button type="submit" class="btn btn-success">Add</button> 
+                        <button type="submit" class="btn btn-success">Update</button> 
                         <a href="{{ route('course.index') }}" class="btn btn-info">close</a>
                     </form>
                 </div>

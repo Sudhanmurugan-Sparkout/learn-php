@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\fallbackController;
 use App\Http\Controllers\studentsController;
 use App\Http\Controllers\userController;
@@ -54,3 +55,7 @@ Route::post('student/create',[studentsController::class,'store'])->name('student
 Route::get('student/{id}/edit',[studentsController::class,'edit'])->name('student.edit');
 Route::put('student/{id}/update',[studentsController::class,'update'])->name('student.update');
 Route::get('student/{id}/delete',[studentsController::class,'destroy'])->name('student.delete');
+
+//CRUD use resource
+
+Route::resource('course',CourseController::class);
