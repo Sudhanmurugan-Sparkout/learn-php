@@ -6,22 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
 </head>
 <body>
     <div class="container mt-5">
-       <div class="row">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-header">
-                    <h3>Course Details</h3>
-                    
-                </div>
-                
-                <div class="card-body">
-                    <form action="{{ route('course.store') }}" method="post" class="form-group">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>product</h3>
+                        <a href="{{ route('product.index') }}">close</a>
+                    </div>
+                    <div class="card-body">
+                        <form action="{{ route('product.store') }}" method="post">
                         @csrf
-                       
+                        @method('post')
+                        
                         <div>
                             <label for="name">Name</label>
                             <input type="text" name="name" id="name" value={{ old('name') }}>
@@ -33,37 +32,28 @@
                         </strong></p>
                         @endif
                         <div>
-                            <label for="duration">Duration</label>
-                            <input type="text" name="duration" id="duration" value={{ old('duration') }}>
+                            <label for="brand">Brand</label>
+                            <input type="text" name="brand" id="brand" value={{ old('duration') }}>
                         </div>
-                        @if($errors->has('duration'))
+                        @if($errors->has('brand'))
                         <p><strong class="text-danger">
                             
-                            {{ $errors->first('duration') }}
+                            {{ $errors->first('brand') }}
                         </strong></p>
                         @endif
                         <div>
-                            <label for="sdate">Starting Date</label>
-                            <input type="date" name="startingDate" id="sdate" value={{ old('startingDate') }}>
+                            <label for="stock">Stock</label>
+                            <input type="text" name="stock" id="stock" value={{ old('stock') }}>
                         </div>
-                        @if($errors->has('startingDate'))
+                        @if($errors->has('stock'))
                         <p><strong class="text-danger">
                             
-                            {{ $errors->first('startingDate') }}
+                            {{ $errors->first('stock') }}
                         </strong></p>
                         @endif
-                        <div>
-                            <label for="edate">Ending Date</label>
-                            <input type="date" name="endingDate" id="edate" value={{ old('endingDate') }}>
-                        </div>
-                        @if($errors->has('endingDate'))
-                        <p><strong class="text-danger">
-                            
-                            {{ $errors->first('endingDate') }}
-                        </strong></p>
-                        @endif
+                        
                         <button type="submit" class="btn btn-success">Add</button> 
-                        <a href="{{ route('course.index') }}" class="btn btn-info">close</a>
+                        <a href="{{ route('product.index') }}" class="btn btn-info">close</a>
                     </form>
                 </div>
             </div>
@@ -73,3 +63,5 @@
     
 </body>
 </html>
+                        
+                        

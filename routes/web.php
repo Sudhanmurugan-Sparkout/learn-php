@@ -2,9 +2,14 @@
 
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\fallbackController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\studentsController;
 use App\Http\Controllers\userController;
+use App\Models\company;
+use App\Models\eloquent;
 use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -59,3 +64,29 @@ Route::get('student/{id}/delete',[studentsController::class,'destroy'])->name('s
 //CRUD use resource
 
 Route::resource('course',CourseController::class);
+Route::resource('product',ProductController::class);
+
+//eloquent model learning route
+
+
+Route::get('eloquent',function(){
+return eloquent::all();
+});
+Route::get('eloquent/create',function(){
+    return eloquent::create([
+        'name'=>"two values",
+       	'lastName'=>"murugan",
+        'age'=>3,
+      
+    ]);
+});
+
+//eloquent relation ship 
+
+Route::get('/company',function(){
+    // $data= company::find(1);
+    // dd($data->getEmployee);
+$data=company::with('getEmployee')->whereId(1)->first();
+return Response::json($data);
+
+});
