@@ -1,14 +1,19 @@
 <?php
 
+use App\Http\Controllers\BookController;
+use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\fallbackController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\studentsController;
 use App\Http\Controllers\userController;
+use App\Models\author;
+use App\Models\book;
+use App\Models\client;
 use App\Models\company;
 use App\Models\eloquent;
 use Illuminate\Http\Request;
-
+use App\Models\employee;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Route;
 
@@ -81,12 +86,44 @@ Route::get('eloquent/create',function(){
     ]);
 });
 
-//eloquent relation ship 
+//eloquent relation ship (one To one)
 
-Route::get('/company',function(){
+Route::get('/companies',function(){
     // $data= company::find(1);
     // dd($data->getEmployee);
-$data=company::with('getEmployee')->whereId(1)->first();
+$data=company::with(['getEmployee','getClient'])->whereId(1)->first();
 return Response::json($data);
 
 });
+
+Route::get('/employees/{id}',[CompanyController::class,'showEmployees']);
+
+Route::get('/employees',function(){
+   $data=employee::with('getuser')->whereId(2)->first();
+   return Response::json($data);
+});
+
+Route::get('/clients',function(){
+    $data=client::with('getCompany')->whereId(1)->first();
+    return Response::json($data);
+});
+
+//Eloquent relationship(one To many)
+
+Route::get('/company-records',function(){
+    $datas=company::with(['getemployees','getclients'])->whereId(1)->first();
+    return Response::json($datas);
+});
+
+//Eloquent relationship(many To many)
+
+Route::get('/author-books',function(){
+    $data=author::with('getbook')->whereId(1)->get();
+    return Response::json($data);
+});
+
+Route::get('/book-authors',function(){
+   $data=book::with('getauthors')->whereId(3)->get();
+   return Response::json($data);
+});
+

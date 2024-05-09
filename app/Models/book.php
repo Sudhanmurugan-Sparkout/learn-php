@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class employee extends Model
+class book extends Model
 {
     use HasFactory;
-    function getuser(){
-        return $this->belongsTo(company::class,'company_id');
+    function getauthors(){
+        return $this->belongsToMany(author::class,book_author::class);
     }
 }

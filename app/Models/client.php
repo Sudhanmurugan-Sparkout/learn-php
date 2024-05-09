@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class employee extends Model
+class client extends Model
 {
     use HasFactory;
-    function getuser(){
+    function getCompany(){
         return $this->belongsTo(company::class,'company_id');
     }
 }
