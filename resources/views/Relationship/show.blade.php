@@ -14,12 +14,14 @@
             <div class="col-md-12">
                 <div class="card mt-5">
                     <div class="card-header bg-info">
-                        <h3>{{ $company->name }}</h3>
+                        <h1>Eloquent Relationship -> One to one</h1>
+                        <h3>Company name :{{ $company->name }}</h3>
+                        <p>Employee details</p>
                     </div>
                     <div class="card-body">
-                          <p class="card-text"><strong>{{ $employees->id }}</strong></p>
-                          <p class="card-text"><strong>{{ $employees->name }}</strong></p>
-                          <p class="card-text"><strong>{{ $employees->role }}</strong></p>
+                          <p class="card-text">Id : <strong>{{ $company->id }}</strong></p>
+                          <p class="card-text">Name : <strong>{{ $company->name }}</strong></p>
+                          <p class="card-text">Role : <strong>{{ $company->role }}</strong></p>
                     </div>
                 </div>
             </div>

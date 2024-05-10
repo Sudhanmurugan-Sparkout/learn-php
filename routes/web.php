@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BookAuthorController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\CourseController;
@@ -96,7 +97,8 @@ return Response::json($data);
 
 });
 
-Route::get('/employees/{id}',[CompanyController::class,'showEmployees']);
+Route::get('/employees/{id}',[CompanyController::class,'showEmployee']);
+
 
 Route::get('/employees',function(){
    $data=employee::with('getuser')->whereId(2)->first();
@@ -111,9 +113,10 @@ Route::get('/clients',function(){
 //Eloquent relationship(one To many)
 
 Route::get('/company-records',function(){
-    $datas=company::with(['getemployees','getclients'])->whereId(1)->first();
+    $datas=company::with(['getemployees.','getclients'])->whereId(1)->first();
     return Response::json($datas);
 });
+Route::get('clients/{id}',[CompanyController::class,'showClient']);
 
 //Eloquent relationship(many To many)
 
@@ -127,3 +130,9 @@ Route::get('/book-authors',function(){
    return Response::json($data);
 });
 
+Route::get('/book-authors/{id}',[BookAuthorController::class,'authorShow']);
+
+// Route::get('/country-district',function(){
+//     $data=country::with('getStateDistrict')->whereId(1)->get();
+
+// })

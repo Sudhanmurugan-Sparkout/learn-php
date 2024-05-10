@@ -7,9 +7,13 @@ use Illuminate\Http\Request;
 
 class CompanyController extends Controller
 {
-    function showEmployees(int $id){
+    function showEmployee(int $id){
+        $company=company::with('getEmployee')->whereId($id)->first();   
+        return view ('Relationship.show',compact('company'));
+    }
+    FUNCTION showClient(int $id){
         $company=company::find($id);
-        $employees=$company->getEmployee;
-        return view ('company.show',compact('company','employees'));
+        $clients=$company->getClients;
+        return view('Relationship.clientshow',compact('company','clients'));
     }
 }
