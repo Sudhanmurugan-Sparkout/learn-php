@@ -29,7 +29,7 @@ class eloquent extends Model
     }
 
     //Accessor
-    function getNamAttributes(){
+    function getNameAttributes(){
         return ucfirst($this->name);
     }
     //mutators

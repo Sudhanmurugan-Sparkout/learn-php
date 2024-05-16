@@ -6,6 +6,7 @@ use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\fallbackController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\RawQueryController;
 use App\Http\Controllers\studentsController;
 use App\Http\Controllers\userController;
 use App\Models\author;
@@ -17,7 +18,6 @@ use Illuminate\Http\Request;
 use App\Models\employee;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -132,7 +132,9 @@ Route::get('/book-authors',function(){
 
 Route::get('/book-authors/{id}',[BookAuthorController::class,'authorShow']);
 
-// Route::get('/country-district',function(){
-//     $data=country::with('getStateDistrict')->whereId(1)->get();
+//Db raw queries
 
-// })
+Route::get('/raw-queries',[RawQueryController::class,'index']);
+Route::get('/raw-queries/create',[RawQueryController::class,'create']);
+Route::get('/raw-queries/update/{id}',[RawQueryController::class,'update']);
+Route::get('/raw-queries/delete/{id}',[RawQueryController::class,'delete']);
