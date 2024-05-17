@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\learnSeeder;
+use Database\Factories\learnFactory;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -20,5 +22,7 @@ class learnSeederTableSeeder extends Seeder
             'email'=>Str::random(15).'@gmail.com',
             'number'=>rand(1,10)
         ]);
+
+  
     }
 }

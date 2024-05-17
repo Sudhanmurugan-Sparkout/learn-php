@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\team;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,12 +14,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('learn_seeders', function (Blueprint $table) {
+        Schema::create('players', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->unsignedBigInteger('team_id');
             $table->string('email');
             $table->integer('number');
+            $table->string('health_condition');
             $table->timestamps();
+            $table->foreign('team_id')->references('id')->on('teams')->onDelete('cascade');
         });
     }
 
@@ -29,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('learn_seeders');
+        Schema::dropIfExists('players');
     }
 };
