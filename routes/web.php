@@ -2,10 +2,13 @@
 
 use App\Http\Controllers\BookAuthorController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\CollectionController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\fallbackController;
+use App\Http\Controllers\MOnthController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\QueryBuilderController;
 use App\Http\Controllers\RawQueryController;
 use App\Http\Controllers\studentsController;
 use App\Http\Controllers\userController;
@@ -16,6 +19,7 @@ use App\Models\company;
 use App\Models\eloquent;
 use Illuminate\Http\Request;
 use App\Models\employee;
+use Doctrine\DBAL\Driver\Middleware;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Route;
 /*
@@ -138,3 +142,16 @@ Route::get('/raw-queries',[RawQueryController::class,'index']);
 Route::get('/raw-queries/create',[RawQueryController::class,'create']);
 Route::get('/raw-queries/update/{id}',[RawQueryController::class,'update']);
 Route::get('/raw-queries/delete/{id}',[RawQueryController::class,'delete']);
+
+//Query Builder 
+
+Route::get('/query-builder',[QueryBuilderController::class,'index']);
+
+//Collections 
+
+Route::get('/collections',[CollectionController::class,'index']);
+
+//middleware
+
+Route::get('/month/{month}',MOnthController::class)->middleware('month');
+// Route::get('/month/{month}',MOnthController::class)->middleware('month:2');  also give value t
