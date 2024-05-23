@@ -2,10 +2,12 @@
 
 use App\Http\Controllers\BookAuthorController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\CarController;
 use App\Http\Controllers\CollectionController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\fallbackController;
+use App\Http\Controllers\ImageController;
 use App\Http\Controllers\MOnthController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\QueryBuilderController;
@@ -154,4 +156,13 @@ Route::get('/collections',[CollectionController::class,'index']);
 //middleware
 
 Route::get('/month/{month}',MOnthController::class)->middleware('month');
-// Route::get('/month/{month}',MOnthController::class)->middleware('month:2');  also give value t
+// Route::get('/month/{month}',MOnthController::class)->middleware('month:2');  also give value to middleware
+
+//File upload 
+
+Route::view('/car','carFileUpload');
+Route::post('/car/upload',[CarController::class,'store'])->name('car.upload');
+Route::get('/car/show',[CarController::class,'show']);
+
+Route::view('/image','imageFileUpload');
+Route::post('/image/upload',[ImageController::class,'store'])->name('image.upload');
