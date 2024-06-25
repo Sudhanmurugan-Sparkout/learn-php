@@ -15,7 +15,7 @@ class team extends Model
        return $this->hasMany(role::class,'team_id');
     }
     public function company(){
-        return $this->belongsTo(company::class);
+        return $this->belongsTo(company::class,'company_id');
     }
     
 }

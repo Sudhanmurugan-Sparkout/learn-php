@@ -25,12 +25,12 @@
             flex-wrap: wrap; 
             margin-bottom: 20px;
         }
-        .center h1 {
+        /* .center h1 {
             position: absolute;
             top: 1%;
             left: 50%;
-            margin: 0;
-        }
+            margin:0;
+        } */
         .circle {
             display: flex;
             justify-content: center;
