@@ -12,7 +12,7 @@
             min-height: 100vh;
             margin: 0;
             background-color: #f7f7f7;
-            flex-direction: column; /* Set flex-direction directly in CSS */
+            flex-direction: column; 
         }
         .center {
             position: relative;
@@ -25,12 +25,6 @@
             flex-wrap: wrap; 
             margin-bottom: 20px;
         }
-        /* .center h1 {
-            position: absolute;
-            top: 1%;
-            left: 50%;
-            margin:0;
-        } */
         .circle {
             display: flex;
             justify-content: center;

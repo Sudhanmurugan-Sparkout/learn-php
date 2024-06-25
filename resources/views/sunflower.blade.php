@@ -15,13 +15,13 @@
         }
         .center {
             position: relative;
-            width: 200px; /* Adjust as needed */
-            height: 200px; /* Adjust as needed */
+            width: 200px; 
+            height: 200px; 
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
-            flex-wrap: wrap; /* Allows items to wrap if necessary */
+            flex-wrap: wrap; 
         }
         .center h1 {
             position: absolute;
