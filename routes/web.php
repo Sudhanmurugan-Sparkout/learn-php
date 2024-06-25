@@ -19,3 +19,4 @@ Route::get('/', function () {
 });
 
 Route::get('/sunflower', SunflowerController::class);
+Route::get('/tree',SunflowerController::class);

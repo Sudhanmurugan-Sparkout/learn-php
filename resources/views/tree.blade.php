@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Sunflower Hierarchical Structure</title>
+    <title>Company Hierarchical Tree Structure</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,22 +12,23 @@
             min-height: 100vh;
             margin: 0;
             background-color: #f7f7f7;
+            flex-direction: column; /* Set flex-direction directly in CSS */
         }
         .center {
             position: relative;
-            width: 200px; /* Adjust as needed */
-            height: 200px; /* Adjust as needed */
+            width: 200px; 
+            height: 200px; 
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
-            flex-wrap: wrap; /* Allows items to wrap if necessary */
+            flex-wrap: wrap; 
+            margin-bottom: 20px;
         }
         .center h1 {
             position: absolute;
-            top: 50%;
+            top: 1%;
             left: 50%;
-            transform: translate(-50%, -50%);
             margin: 0;
         }
         .circle {
@@ -37,26 +38,45 @@
             text-align: center;
             padding: 10px;
             box-sizing: border-box;
-            position: absolute;
             border-radius: 50%;
+            margin: 10px;
         }
         .company {
-            width: 150px;
-            height: 150px;
+            width: 170px;
+            height: 170px;
             border: 2px solid #2a7ae2;
             background-color: #e2f3ff;
+            position: relative;
         }
         .team {
             width: 120px;
             height: 120px;
             border: 2px solid #3b83c0;
             background-color: #cce7ff;
+            position: relative;
         }
         .role {
             width: 90px;
             height: 90px;
             border: 2px solid #1f4b6e;
             background-color: #99d0ff;
+            position: relative;
+        }
+        .tree-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        .tree-row {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+            width: 100%;
+        }
+        .tree-node {
+            margin: 0 10px;
+            position: relative;
         }
     </style>
 </head>
@@ -87,32 +107,27 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function() {
-            const centerElement = $('.center');
+            const heading = $('.center h1');
             const companies = $('.company');
-            positionElements(centerElement, companies, 450); 
+            treeStructure(heading, companies);
 
             companies.each(function() {
                 const teams = $(this).find('.team');
-                positionElements($(this), teams, 200);
+                treeStructure($(this), teams);
 
                 teams.each(function() {
                     const roles = $(this).find('.role');
-                    positionElements($(this), roles, 100);
+                    treeStructure($(this), roles);
                 });
             });
 
-            function positionElements(parent, children, radius) {
-                const angleStep = (2 * Math.PI) / children.length;
+            function treeStructure(parent, children) {
+                const container = $('<div class="tree-container"></div>').insertAfter(parent);
+                const row = $('<div class="tree-row"></div>').appendTo(container);
 
-                children.each(function(index) {
-                    const angle = index * angleStep;
-                    const x = radius * Math.cos(angle) - $(this).outerWidth() / 2;
-                    const y = radius * Math.sin(angle) - $(this).outerHeight() / 2;
-
-                    $(this).css({
-                        left: `${x + parent.outerWidth() / 2}px`,
-                        top: `${y + parent.outerHeight() / 2}px`
-                    });
+                children.each(function() {
+                    const node = $('<div class="tree-node"></div>').append($(this).detach());
+                    row.append(node);
                 });
             }
         });
