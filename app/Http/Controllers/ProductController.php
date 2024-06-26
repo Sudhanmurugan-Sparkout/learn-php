@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Customer;
 use App\Models\discount;
+use App\Models\order;
 use App\Models\product;
 use Illuminate\Http\Request;
 
@@ -64,6 +66,19 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
-        dd($request->all());
+        $maxOrderId = Customer::max('order_id');
+      $orderId = $maxOrderId == null ? 0: $maxOrderId;
+        $obj = new Customer();
+        $obj->total_product_price = $request->total_product_price;
+        $obj->gst_amount = $request->gst;
+        $obj->discount = $request->discount;
+        $obj->final_price = $request->final_price;
+        $obj->name = auth()->user()->name;
+        $obj->email = auth()->user()->email;
+        $obj->password = auth()->user()->password;
+        $obj->order_id =$orderId +1;
+        $obj->save();
+        session()->flash('success', 'Customer details saved successfully.');
+        return redirect()->route('add-products');
     }
 }

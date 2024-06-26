@@ -10,6 +10,11 @@
 </head>
 <body>
     <div class="container mt-5">
+        @if (session('success'))
+        <div class="alert alert-success">
+        {{ session('success') }}
+        </div>
+        @endif
         <div class="row">
             <div class="col-sm-6 col-lg-3 mb-3">
                 <label for="products">Products <span class="text-danger">*</span></label>
@@ -80,8 +85,11 @@
             </div>
         </div>
         <div class="row justify-content-end" >
-            <div class="col-sm-6 col-lg-2 mb-3 align-end">
+            <div class="col-sm-6 col-lg-1 mb-3 align-end">
                 <button type="submit" class="btn btn-success" id="submit-button">Submit</button>
+            </div>
+            <div class="col-sm-6 col-lg-1 mb-3 align-end">
+                <a href="{{ route('home.logout') }}" class="btn btn-danger">Logout</a>
             </div>
         </div>
     </form>
