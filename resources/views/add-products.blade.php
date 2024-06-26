@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Add Products</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
@@ -41,11 +41,18 @@
                 <input type="number" class="form-control" name="total_amount" id="total_amount" readonly>
             </div>
             <div class="col-sm-6 col-lg-2 mb-3 d-flex align-items-end">
+                <form id="myForm" action="product/storeProdruct" method="POST">
+                    @method('POST')
+                    @csrf
+                    <input type="hidden" name="productName" id="productName">
+                    <input type="hidden" name="price" id="perProductPrice" >
+                    <input type="hidden" name="quantity" id="productQuantity" >
+                    <input type="hidden" name="totalAmount" id="totalAmount" >
+                </form>
                 <button class="btn btn-info btn-block" id="add-button">Add</button>
             </div>
         </div>
-        <form action="/product/store" method="post">
-            @csrf
+        
         <div class="row">
             <table class="table table-danger" id="product-table">
                 <thead>
@@ -60,6 +67,8 @@
                 </tbody>
             </table>
         </div>
+        <form action="/product/store" method="post">
+            @csrf
         <div class="row justify-content-end" >
             <div class="col-sm-6 col-lg-2 mb-3 align-end">
                 <label for="total_product_price">Total Product Amount <span class="text-danger">*</span></label>
@@ -94,7 +103,6 @@
         </div>
     </form>
     </div>
-   
     <script src="{{ asset('assets/js/ajax.js') }}"></script>
     </body>
 </html>

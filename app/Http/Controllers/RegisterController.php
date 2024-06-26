@@ -25,6 +25,7 @@ class RegisterController extends Controller
      * @return \Illuminate\Http\RedirectResponse The redirect to the product addition page.
      */
     function store(RegisterRequest $request){
+        dd( $request->input('productName'));
         $data = $request->all();
         $obj = new User();
         $obj->name = $data['name'];

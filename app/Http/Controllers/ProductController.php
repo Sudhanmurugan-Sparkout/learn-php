@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Customer;
 use App\Models\discount;
 use App\Models\order;
+use App\Models\orderDetails;
 use App\Models\product;
 use Illuminate\Http\Request;
 
@@ -67,7 +68,7 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $maxOrderId = Customer::max('order_id');
-      $orderId = $maxOrderId == null ? 0: $maxOrderId;
+        $orderId = $maxOrderId == null ? 0: $maxOrderId;
         $obj = new Customer();
         $obj->total_product_price = $request->total_product_price;
         $obj->gst_amount = $request->gst;
@@ -80,5 +81,20 @@ class ProductController extends Controller
         $obj->save();
         session()->flash('success', 'Customer details saved successfully.');
         return redirect()->route('add-products');
+    }
+
+    public function storeProduct(Request $request){
+dd($request->all());
+        $maxOrderId = orderDetails::max('order_id');
+        $orderId = $maxOrderId == null ? 0: $maxOrderId;
+        $obj = new orderDetails();
+        $obj->product_name=$request->productName;
+        $obj->price=$request->price;
+        $obj->quantity=$request->quantity;
+        $obj->total_price =$request->totalAmount;
+        $obj->order_id=$orderId ==$maxOrderId ? $orderId : $orderId+1;
+        $obj->save();
+        // return redirect()->route('add-products');
+
     }
 }

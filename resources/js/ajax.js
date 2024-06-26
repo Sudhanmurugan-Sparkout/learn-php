@@ -44,6 +44,12 @@ $('#add-button').click(function() {
                 <td>${totalAmount}</td>
             </tr>
         `);
+        $('#productName').val(productName);
+        $('#perProductPrice').val(price);
+        $('#productQuantity').val(quantity);
+        $('#totalAmount').val(totalAmount);
+
+        $('myForm').submit();
 
         $('#products').val('');
         $('#price').val('');

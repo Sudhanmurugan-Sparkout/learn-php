@@ -24,6 +24,8 @@ Route::get('/add-products',[ProductController::class,'addProduct'])->middleware(
 Route::get('/fetch-product-price/{productId}/',[ProductController::class,'fetchPrice']);
 Route::get('/apply-discount/{total}',[ProductController::class,'applyDiscount']);
 Route::post('product/store',[ProductController::class,'store']);
+Route::post('product/storeProdruct',[ProductController::class,'storeProduct']);
+
 
 Route::get('login', [LoginController::class, 'index'])->name('login'); //->middleware('guest');
 Route::post('login/post', [LoginController::class, 'store'])->name('login.store');
